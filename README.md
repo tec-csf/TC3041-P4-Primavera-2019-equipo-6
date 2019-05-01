@@ -13,11 +13,11 @@ El huerto urbano, equiparable al huerto en el jardín, en su concepto se trata d
 - Temperatura del ambiente
 - UV luz solar
 
-# Tags
+## Tags
 - sensor = < numero-de-sensor >
 - marca = < marca-de-sensor >
 
-# Valores (measurements)
+## Valores (measurements)
 - Humedad: valor = < Rango 0 to 50% >
 - Temp: valor = < temperatura en Cº >
 - UV: valor = < μmol >
@@ -48,4 +48,5 @@ El huerto urbano, equiparable al huerto en el jardín, en su concepto se trata d
     - Username: `admin`
     - Password: `secret`
 3. Configurar:
+
     ![](readmeFiles/grafanaConfig.png)
