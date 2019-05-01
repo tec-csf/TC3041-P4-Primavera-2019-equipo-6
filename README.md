@@ -14,12 +14,13 @@ El huerto urbano, equiparable al huerto en el jardín, en su concepto se trata d
 - UV luz solar
 
 # Tags
-- sensor=<numero-de-sensor>
+- sensor = < numero-de-sensor >
+- marca = < marca-de-sensor >
 
-# Valores
-- Humedad: valor= < Rango 0 to 50% >
-- Temp: valor= < temperatura en Cº >
-- UV: valor= < μmol >
+# Valores (measurements)
+- Humedad: valor = < Rango 0 to 50% >
+- Temp: valor = < temperatura en Cº >
+- UV: valor = < μmol >
 
 # Contribuir
 ## Requisitos previos
@@ -29,6 +30,9 @@ El huerto urbano, equiparable al huerto en el jardín, en su concepto se trata d
 ## Ejecutar contenedores
 - `docker run --name influxP4 -d -p 8086:8086 -v $HOME:/var/lib/influxdb influxdb`
 - `docker run -d  -p 3000:3000 --name=grafana -e "GF_SERVER_ROOT_URL=http://grafana.server.name" -e "GF_SECURITY_ADMIN_PASSWORD=secret" grafana/grafana`
+
+## Generar dataset
+- `python3 ./generateData.py`
 
 ## Importar dataset a InfluxDB
 - Instalar modulo influxdb en python 3: `python3 -m pip install influxdb`
@@ -43,3 +47,5 @@ El huerto urbano, equiparable al huerto en el jardín, en su concepto se trata d
 2. Credenciales:
     - Username: `admin`
     - Password: `secret`
+3. Configurar:
+    ![](readmeFiles/grafanaConfig.png)

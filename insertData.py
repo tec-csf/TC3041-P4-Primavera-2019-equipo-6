@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 FILEPATH        = 'iot_garden_dataset.log'
 DATABASE        = 'iot_garden_database'
+#FILEPATH        = 'test.log'
+#DATABASE        = 'test_database3'
 HOST            = 'localhost'
 PORT            = 8086
 USER            = 'root'
@@ -11,9 +13,8 @@ import json
 from influxdb import InfluxDBClient
 
 # display progress bar
-
 def display_progress(ratio):
-    bar_length = 20
+    bar_length = 40
     block = int(round(bar_length * ratio))
     text = "\rInserting data points: [{0}] {1:.2f}%".format( "#" * block + "-" * (bar_length - block), ratio * 100)
     sys.stdout.write(text)
