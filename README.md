@@ -32,15 +32,20 @@ El huerto urbano, equiparable al huerto en el jardín, en su concepto se trata d
 - `docker run -d  -p 3000:3000 --name=grafana -e "GF_SERVER_ROOT_URL=http://grafana.server.name" -e "GF_SECURITY_ADMIN_PASSWORD=secret" grafana/grafana`
 
 ## Generar dataset
-- `python3 ./generateData.py`
+- `python3 ./Create_Data.py`
 
-## Importar dataset a InfluxDB
-- Instalar modulo influxdb en python 3: `python3 -m pip install influxdb`
-- Ejecutar programa: `python3 ./insertData.py`
+## Importar dataset al contenedor de InfluxDB
+- Ir a la ruta donde se creó el archivo iot_garden_database.log
+- Copiar el dataset al contenedor con `sudo docker cp iot_garden_database.log influxP4:/var/lib/influxdb/`
 
-### Pruebas
+## Importar los datos a la base de influx:
 - Entrar al bash de influx: `docker exec -it influxP4 bash`
+- Importar los datos mediante el comando `influx -import -path=/var/lib/influxdb/iot_garden_dataset.log -precision=ns`
 - Acceder a la base de datos `influx`
+
+## Para verificar que los datos se hayan insertado
+- Se puede ejecutar el query: `use iot_garden_dataset`
+- `Select count(*) from humedad`
 
 ## Grafana
 1. Ingresar a grafana: [http://localhost:3000](http://localhost:3000)
