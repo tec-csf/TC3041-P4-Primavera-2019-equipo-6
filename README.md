@@ -55,3 +55,21 @@ El huerto urbano, equiparable al huerto en el jardín, en su concepto se trata d
 3. Configurar:
 
     ![](readmeFiles/grafanaConfig.png)
+
+##Previsualización de las gráficas
+
+    ![](readmeFiles/graphs_screenshot.png)
+
+##Configuración de las gráficas
+
+    ![](Screenshots/avrg_heat_config.png)
+
+    ![](Screenshots/avrg_heat_graph_config.png)
+    
+    ![](Screenshots/Humidity_Temp_query.png)
+
+    ![](Screenshots/Hum_temp_graph_conf.png)
+
+    ![](Screenshots/max_uv_graph_config.png)
+
+    ![](Screenshots/max_uv_query.png)
